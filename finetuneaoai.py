@@ -185,6 +185,25 @@ def main():
     )
     validation_file_id = validation_response.id
 
+    while True:
+        file_status = client.files.retrieve(training_file_id).status
+        if file_status == "processed":
+            break
+        time.sleep(10)  # Check every 10 seconds
+
+    while True:
+        file_status = client.files.retrieve(validation_file_id).status
+        if file_status == "processed":
+            break
+        time.sleep(10)  # Check every 10 seconds
+
+    file_status = client.files.retrieve(training_file_id).status
+    print(f"Training File status: {file_status}")  # Should return "processed"
+
+    file_status = client.files.retrieve(validation_file_id).status
+    print(f"Validation File status: {file_status}")  # Should return "processed"
+
+
     print("Training file ID:", training_file_id)
     print("Validation file ID:", validation_file_id)
     # Submit fine-tuning training job
