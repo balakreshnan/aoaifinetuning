@@ -1,0 +1,15 @@
+azure-ai-projects
+azure-monitor-opentelemetry==1.6.1
+opentelemetry-instrumentation-openai-v2
+streamlit
+azure-ai-evaluation
+openai
+streamlit-mermaid
+marshmallow==3.18.0
+streamlit-quill
+azure-ai-evaluation[redteam]
+opentelemetry-sdk
+azure-core-tracing-opentelemetry
+azure-ai-inference[opentelemetry]
+opentelemetry-exporter-otlp==1.31.1
+azure-monitor-opentelemetry-exporter==1.0.0b28
